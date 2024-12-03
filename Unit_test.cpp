@@ -4,14 +4,14 @@
 #include <fstream>
 using namespace std;
 
-// Функция сравнивающая output.txt и expected.txt
+// Р¤СѓРЅРєС†РёСЏ СЃСЂР°РІРЅРёРІР°СЋС‰Р°СЏ output.txt Рё expected.txt
 bool compareFiles(const string& file1, const string& file2) {
     
     ifstream f1(file1, ios::binary);
     ifstream f2(file2, ios::binary);
 
     if (!f1.is_open() || !f2.is_open()) {
-        cerr << "Ошибка: Файл не открылся." << endl;
+        cerr << "РћС€РёР±РєР°: Р¤Р°Р№Р» РЅРµ РѕС‚РєСЂС‹Р»СЃСЏ." << endl;
         return false;
     }
 
@@ -56,15 +56,15 @@ int main() {
         int result = system(command.c_str());
 
         if (result == -1) {
-            cerr << "Ошибка: Команда не выполнена." << endl;
+            cerr << "РћС€РёР±РєР°: РљРѕРјР°РЅРґР° РЅРµ РІС‹РїРѕР»РЅРµРЅР°." << endl;
             return 1;
         }
 
         if (compareFiles(expected_output_file, output_file)) {
-            cout << "Тест пройден для input " << i << ": сортировка выполнена корректно." << endl;
+            cout << "РўРµСЃС‚ РїСЂРѕР№РґРµРЅ РґР»СЏ input " << i << ": СЃРѕСЂС‚РёСЂРѕРІРєР° РІС‹РїРѕР»РЅРµРЅР° РєРѕСЂСЂРµРєС‚РЅРѕ." << endl;
         }
         else {
-            cout << "Тест не пройден для input " << i << ": сортировка выполнена некорректно." << endl;
+            cout << "РўРµСЃС‚ РЅРµ РїСЂРѕР№РґРµРЅ РґР»СЏ input " << i << ": СЃРѕСЂС‚РёСЂРѕРІРєР° РІС‹РїРѕР»РЅРµРЅР° РЅРµРєРѕСЂСЂРµРєС‚РЅРѕ." << endl;
         }
     }
 
